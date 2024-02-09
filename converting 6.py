@@ -1,4 +1,4 @@
-menu = "1: Binary Numbers to Decimal Numbers.\n2: Decimal Numbers to Binary Numbers.\n3: Add Two Binary Numbers.\n4: Decimal Number into Hexadecimal.\n5: Hexadecimal Number into Deciaml."
+menu = "1: Binary Numbers to Decimal Numbers.\n2: Decimal Numbers to Binary Numbers.\n3: Add Two Binary Numbers.\n4: Decimal Number into Hexadecimal.\n5: Hexadecimal Number into Deciaml.\n6: Binary Number into Hexadecimal."
 print(menu)
 choice = input("Please choose one of the given options   ")
 choiceint = int(choice)
@@ -143,17 +143,34 @@ if choiceint == 5:
     F = 15
     Hexadecnum = input("Enter your Hexadecimal number you wish to convert to Decimal  ")
     print(Hexadecnum)
-    hexaint = int(Hexadecnum)
-    x = len(Hexadecnum) -1
+    pwr = len(Hexadecnum) -1
     total = 0
-    if "A" in Hexadecnum:
-        
     for i in Hexadecnum :
-        if int(i) >= 9:
-            total = total + i*(16**x)
-            
-        if int(i) == 10:
-            print("w")
-            total = total + 10*(16**x)
-    print("In Hexadeciaml your Decimal number is",total)
+        if i == "A":
+            total = total + A*(16**pwr)
+        elif i == "B":
+            total = total + B*(16**pwr)
+        elif i == "C":
+            total = total + C*(16**pwr)
+        elif i == "D":
+            total = total + D*(16**pwr)
+        elif i == "E":
+            total = total + E*(16**pwr)
+        elif i == "F":
+            total = total + F*(16**pwr)
+        else:
+            total = total + int(i)*(16**pwr)
+        pwr = pwr-1
+    print("In Hexadeciaml number ",Hexadecnum, " your Decimal number is",total)
           
+if choiceint == 6:
+    A = 10
+    B = 11
+    C = 12
+    D = 13
+    E = 14
+    F = 15
+    binum = input("enter your binary number that you wish to convert to Hexadecimal  ")
+    print(binum)
+    pwr = len(binum) -1
+    total = 0
